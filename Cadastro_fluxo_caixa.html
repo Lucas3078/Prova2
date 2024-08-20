@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Fluxo do Caixa</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <form action="Cadastro_fluxo_caixa.php" method="post">
+        <fieldset>
+            <legend>Cadastro de Fluxo do Caixa</legend>
+            <br>
+            <div>
+                <label for="data">Data: </label>
+                <input type="date" name="data" id="data" required>
+            </div>
+            <br>
+            <br>
+            <h3>Tipo</h3>
+            <div id="tipo">
+                <label for="tipo">Entrada</label>
+                <input type="radio" name="tipo" value="entrada">
+                <label for="tipo">Saida</label>
+                <input type="radio" name="tipo" value="saida">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div>
+                <label for="valor">Valor: </label>
+                <input type="number" name="valor" id="valor" required>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div>
+                <label for="historico">Histórico: </label>
+                <input type="text" name="historico" id="historico" required>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div>
+                <label for="cheque">Cheque:</label>
+                <select name="cheque" id="cheque">
+                    <option value="0">Sim</option>
+                    <option value="1">Não</option>
+                </select>
+            </div>
+    
+            <br>
+            <br>
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+            <br>
+        </fieldset>
+    </form>
+    <a href="index.html">Voltar</a>
+</body>
+</html>
