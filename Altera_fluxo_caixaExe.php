@@ -1,10 +1,10 @@
 <?php
     include('includes/conexao.php');
-    $id = $_POST['id_fluxo_caixa'];
+    $id = $_POST['id'];
     $data = $_POST['data'];
     $tipo = isset($_POST['tipo']) ? 1 : 0;
     $valor = $_POST['valor'];
-    $historico = $_POST['historico'];
+    $historico = isset($_POST['historico']) ? $_POST['historico'] : '';
     $cheque = isset($_POST['cheque']) ? 1 : 0;
 ?>
 <!DOCTYPE html>
@@ -19,7 +19,6 @@
 <body>
     <h1>Alterar</h1>
     <?php
-    echo "<p>Código: $codigo</p>";
     echo "<p>Data: $data</p>";
     echo "<p>Tipo: " . ($tipo ? 'Entrada' : 'Saida') . "</p>";
     echo "<p>Valor: $valor</p>";
@@ -31,8 +30,8 @@
                 tipo = '$tipo',
                 valor = '$valor',
                 historico = '$historico',
-                cheque = '$cheque',
-            WHERE id_fluxo_caixa = '$id'";
+                cheque = '$cheque'
+            WHERE id = '$id'";
     
     $result = mysqli_query($con, $sql);
     if($result)

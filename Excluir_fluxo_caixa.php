@@ -12,7 +12,7 @@
     <?php
         include('includes/conexao.php');
         $id = $_GET['id'];
-        $sql = "DELETE FROM fluxo_caixa WHERE id_fluxo_caixa = $id";
+        $sql = "DELETE FROM fluxo_caixa WHERE id = $id";
         $result = mysqli_query($con, $sql);
         if($result){
             echo "<h2>Dados deletados com sucesso!</h2>";

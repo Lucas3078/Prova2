@@ -23,7 +23,6 @@
 
         <table class="city-table">
             <tr>
-                <th>Código</th>
                 <th>Data</th>
                 <th>Tipo</th>
                 <th>Valor</th>

@@ -1,7 +1,7 @@
 <?php
     include('includes/conexao.php');
     $id = $_GET['id'];
-    $sql = "SELECT * FROM fluxo_caixa WHERE id_fluxo_caixa=$id";
+    $sql = "SELECT * FROM fluxo_caixa WHERE id=$id";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
 ?>
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="">
 </head>
 <body>
-    <form action="AlteraAnimalExe.php" method="post">
+    <form action="Altera_fluxo_caixaExe.php" method="post">
     <fieldset>
         <legend>Alterar Cadastro</legend>
         <div>
@@ -54,7 +54,7 @@
             <button type="submit">Alterar</button>
         </div>
         <div>
-            <input type="hidden" name="id_fluxo_caixa" value="<?php echo $row['id_fluxo_caixa'] ?>">
+            <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
         </div>
     </fieldset>
     </form>
