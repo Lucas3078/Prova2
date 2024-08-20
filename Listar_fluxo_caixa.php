@@ -23,6 +23,7 @@
 
         <table class="city-table">
             <tr>
+            <th>ID</th>
                 <th>Data</th>
                 <th>Tipo</th>
                 <th>Valor</th>
@@ -33,16 +34,13 @@
             </tr>
             <?php
                 while ($row = mysqli_fetch_array($result)) {
-                    $tipo = $row['tipo'] ? "Entrada" : "Saida";
-                    $cheque = $row['cheque'] ? "Sim" : "Não";
                     echo "<tr>";
                     echo "<td>".$row['id']."</td>";
                     echo "<td>".$row['data']."</td>";
                     echo "<td>".$row['tipo']."</td>";
                     echo "<td>".$row['valor']."</td>";
                     echo "<td>".$row['historico']."</td>";
-                    echo "<td>".$tipo."</td>";
-                    echo "<td>".$cheque."</td>";
+                    echo "<td>".$row['cheque']."</td>";
                     echo "<td><a href='Altera_fluxo_caixa.php?id=".$row['id']."'>Alterar</a></td>";
                     echo "<td><a href='Excluir_fluxo_caixa.php?id=".$row['id']."'>Deletar</a></td>";
                     echo "</tr>";

@@ -11,16 +11,16 @@
     <?php
         include('includes/conexao.php');
 
-        $data = isset($_POST['data']) ? $_POST['data'] : '';
-        $tipo = isset($_POST['tipo']) ? 1 : 0;
-        $valor = isset($_POST['valor']) ? $_POST['valor'] : '';
-        $historico = isset($_POST['historico']) ? $_POST['historico'] : '';
-        $cheque = isset($_POST['cheque']) ? 1 : 0;
+        $data =$_POST['data'];
+        $tipo =$_POST['tipo'];
+        $valor =$_POST['valor'];
+        $historico =$_POST['historico'];
+        $cheque = $_POST['cheque'] ;
 
 
         echo "<h1>Dados do Cadastro</h1>";
         echo "Data: $data<br>";
-        echo "Tipo: " . ($tipo ? "Entrada" : "Saída") . "<br>";
+        echo "Tipo: " . $tipo. "<br>";
         echo "Valor: $valor<br>";
         echo "Histórico: $historico<br>";
         echo "Cheque: " . ($cheque ? "Sim" : "Não") . "<br>";
@@ -28,7 +28,7 @@
 
         $sql = "INSERT INTO fluxo_caixa (data, tipo, valor, historico, cheque) 
                 VALUES ('$data', '$tipo', '$valor', '$historico', $cheque)";
-        
+        echo $sql;
         $result = mysqli_query($con, $sql);
         if ($result) {
             echo "<h2>Dados cadastrados com sucesso!</h2>";
